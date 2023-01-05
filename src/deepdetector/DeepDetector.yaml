@@ -1,0 +1,22 @@
+%YAML:1.0
+---
+DeepDetector:
+  USE_DEEP: 1 # if use DeepDetector
+
+  DEVICE: 'CPU' # Compute Device 'CPU' or 'GPU'
+  model_name: '0710_800x448' # model_name
+  model_type: 'x' # 'v5' or 'x'
+  model_format: 'onnx' #'onnx' or 'xml'
+  input_precision: 'f32'  # 'f32' or 'u8' or 'x'
+
+
+  ncolor: 3
+  ntag: 9
+
+  # Armor parameters:   
+  Lightratio: 4
+  nms_threshold: 0.4 # IOU_threshold
+  conf_threshold: 0.6
+
+
+
