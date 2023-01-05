@@ -1,0 +1,6 @@
+#开启硬触发服务接口
+#true 开启 ， false不开启
+bool trigger_on
+---
+# 1 成功开启 ， 0 开启失败
+uint32 trigger_result

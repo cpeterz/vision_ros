@@ -1,0 +1,64 @@
+%YAML:1.0
+---
+
+#########################
+# Aimer
+#########################
+
+Aimer:
+    debug: 1
+    # 是否使用EKF
+    ekf_on: 1
+    # 是否使用预测
+    predict_on: 1
+
+    # 预测时间
+    time_off: 0.1
+    # 更新装甲板切换的最小距离差
+    switch_threshold: 0.05
+    # 初始化位姿变化最大值，角度制
+    init_pose_tolerance: 15
+    # 自动击发位姿偏差最大值，弧度制
+    aim_pose_tolerance: 0.05
+    # 装甲板匹配得分最大值
+    score_tolerance: 1.0
+    # 连续识别到全部为白色装甲板的次数容忍度，将会停止发射
+    all_white_tolerance_stop_shoot: 10
+    # 连续识别到全部为白色装甲板的次数容忍度，将会停止发射
+    all_white_tolerance_reset: 100
+    # 发射间隔，单位：秒
+    shoot_interval: 0.05
+
+    EKF:
+        debug: 1
+        # 单位时间
+        dt: 0.01
+        # 初始半径
+        init_radius: 0.25
+
+        # 状态转移噪声系数
+        process_noise:
+            center: 0.001
+            velocity: 0.01
+            accelerate: 0.02
+            height: 0.00001
+            radius: 0.00001
+            phase: 0.001
+            palstance: 0.01
+            anglar_accelerate: 0.02
+
+        # 观测噪声系数
+        measure_noise:
+            point: 0.01
+            height: 0.01
+            angle: 0.1
+
+        # 速度状态更新比例容忍度
+        velocity_update_ratio_tolerance: 0.2
+        # 角速度状态更新比例容忍度
+        palstance_update_ratio_tolerance: 0.2
+
+    ROI:
+        min_height: 30
+        roi_height_zoom_rate: 7
+        roi_width_zooo_rate: 3

@@ -1,0 +1,9 @@
+#硬触发云台位姿接口
+#请求 1是，0否
+bool request_msg
+---
+#反馈
+float32 pitch
+float32 yaw
+float32 roll
+float64 timestamp
